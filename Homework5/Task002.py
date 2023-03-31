@@ -1,12 +1,12 @@
-# Задача 24
-n = int(input())
-arr = list()
-for i in range(n):
-    x = int(input())
-    arr.append(x)
+#Задача 28: Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел. 
+# Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
 
-arr_count = list()
-for i in range(len(arr)-1):
-    arr_count.append(arr[i-1]+ arr[i] + arr[i+1])
-arr_count.append(arr[-2] + arr[-1] + arr[0])
-print(max(arr_count))
+def sum_numbers(a, b):
+    if a ==0:
+        return b
+    return sum_numbers(a-1, b+1)
+
+q = int(input())
+g = int(input())
+
+print(sum_numbers(q, g))

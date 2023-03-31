@@ -1,25 +1,17 @@
 '''
-Даны два неупорядоченных набора целых чисел (может быть, с повторениями). 
-Выдать без повторений в порядке возрастания все те числа, которые встречаются в обоих наборах.
-Пользователь вводит 2 числа. n - кол-во элементов первого множества. m - кол-во элементов второго множества. 
-Затем пользователь вводит сами элементы множеств.
+Задача 26:  Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
+
+*Пример:*
+
+A = 3; B = 5 -> 243 (3⁵)
+    A = 2; B = 3 -> 8 
 '''
-mol = [int(x) for x in input().split()]
-n = mol[0]
-m = mol[1]
-set_1 = set()
-set_2 = set()
-list_1 = list()
-a = [int(x) for x in input().split()]
-k = set(a)
-for i in k:
-    set_1.add(i)
-b = [int(x) for x in input().split()]
-k1 = set(b)
-for i in k1:
-    set_2.add(i)
-lok = set_1 & set_2
-kool = list(lok)
-kool.sort()
-for i in kool:
-    print(i, end=' ')
+def numbers(a,b):
+    if b == 0:
+        return 1
+    else:
+        return a * numbers(a, b - 1)
+
+q = int(input())
+g = int(input())
+print(numbers(q, g))
